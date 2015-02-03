@@ -68,7 +68,7 @@ logfile.write( localtime + " Tracking terms from ../twython-keywords.txt\nStarti
 # longer timeout to keep SSL connection open even when few tweets are coming in
 stream = tweepy.streaming.Stream(auth, CustomStreamListener(), timeout=1000.0)
 
-terms = [line.strip() for line in open('twython-keywords.txt')]
+terms = [line.strip() for line in codecs.open('twython-keywords.txt', "r", "utf-8")]
 
 # open output file
 old_date = date.today()
